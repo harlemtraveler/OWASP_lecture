@@ -68,8 +68,8 @@ use INTO OUTFILE to redirect the data to a file
 
 There are some of the queries below that only the `admin` user can run; in those situations use the `-- priv` flag from mysql
 
-| What I want to get| Command to Run|
-| | |
+| What I want to get| |Command to Run|
+| | ||
 
 |Version| 	|SELECT @@version|
 |Comments| 	|SELECT 1; #comment|
